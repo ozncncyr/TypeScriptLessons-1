@@ -11,7 +11,13 @@
         "rootDir": "src",
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+            "downlevelIteration": false,
+            "noImplicitAny": true,
+            "noImplicitReturns": true,
+            "noFallthroughCasesInSwitch": true
     },
     "include": ["./index.ts", "./src/**/*"],
     "exclude": ["node_modules", "dist"]
