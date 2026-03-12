@@ -1,15 +1,14 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "lib": ["ESNext", "DOM"],
-        "jsx": "react-jsx",
+        "target": "es6",
+        "module": "commonjs",
+        "lib": ["ESNext"],
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "outDir": "./dist",
-        "rootDir": "./",
+        "outDir": "dist",
+        "rootDir": "src",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "sourceMap": true
