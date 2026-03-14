@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "file": "person.js",
-  "sourceRoot": "",
-  "sources": [
-    "../src/person.ts"
-  ],
-  "names": [],
-  "mappings": ";;AAAA,MAAqB,MAAM;;AAChB,gBAAS,GAAG,MAAM,CAAC;kBADT,MAAM"
-}
+{"version":3,"file":"person.js","sourceRoot":"","sources":["../src/person.ts"],"names":[],"mappings":";;AAAA,MAAqB,MAAM;;AAChB,gBAAS,GAAG,MAAM,CAAC;kBADT,MAAM"}

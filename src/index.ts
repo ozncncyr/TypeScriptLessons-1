@@ -1,4 +1,4 @@
-import Person, {Student} from './person';
+import {Person, Student, Job} from './all';
 
 Person.firstName = "Ozan Can";
 
@@ -10,3 +10,4 @@ const student1: Student = {
 
 console.log(Person.firstName);
 console.log(student1);
+console.log(Job);
