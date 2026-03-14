@@ -1,26 +1,27 @@
 "use strict";
-// const myArray: [string, string, number] = ["Ozan", "Cuyar", 29];
-// function f():[string, number] {
-//     return [`${myArray[0]} ${myArray[1]}`, myArray[2]];
-// }
-// const myInfo = f();
-// const LogPerson = async (name: string, surname: string, age: number) => {
-//     console.log(`I am ${name} ${surname}. I am ${age} years old.`)
-// }
-// LogPerson("Ozan", "Cuyar", 29);
-// const LogPerson = (params: { name: string; surname: string; age: number }): Promise<string> => {
-//     const { name, surname, age } = params;
-//     const msg = `I am ${name} ${surname}. I am ${age} years old.`;
-//     return Promise.resolve(msg);
-// }
-// LogPerson({ name: "Ozan", surname: "Cuyar", age: 29 }).then((msg) => {
-//     console.log(msg);
-// })
-// HOMEWORK: A FUNCTION THAT TYPING THE NAME AS MANY TIMES AS THE NUMBER IN THE SECOND PARAMETER
-const repeatName = (name, times) => {
-    for (let i = 0; i < times; i++) {
-        console.log((i + 1) + ". " + name);
-    }
+const obj = {
+    name: 'John',
+    surname: 'Doe',
+    age: 18,
+    email: 'john.doe@example.com',
+    role: 'Intern'
 };
-repeatName("Ozan", 5);
+const myColor = "Red";
+const myColors = ["Red", "Green", "Blue"];
+const allColors = ["Red", "Green", "Blue", "Cyan", "Magenta", "Lime", "Pink", "Teal", "Brown"];
+const dogPerson = {
+    name: "Will",
+    surname: "Smith",
+    age: 5,
+    dogName: "Buddy",
+    breed: "Golden Retriever"
+};
+////
+const myMap = new Map();
+myMap.set("one", 1);
+myMap.set("two", 2);
+myMap.set("three", 3);
+// myMap.set(4, "four"); => // Error: Argument of type 'number' is not assignable to parameter of type 'string'.
+// myMap.set("five", "five"); => // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+console.log(myMap);
 //# sourceMappingURL=index.js.map
