@@ -45,3 +45,5 @@ const personalList: Array<Record<"name" | "role", string>> = [
     { name: "Ayşe Kaya", role: "Designer" },
     { name: "Mehmet Demir", role: "Manager" }
 ];
+
+console.log(personalList)

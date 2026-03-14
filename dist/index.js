@@ -28,4 +28,5 @@ const personalList = [
     { name: "Ayşe Kaya", role: "Designer" },
     { name: "Mehmet Demir", role: "Manager" }
 ];
+console.log(personalList);
 //# sourceMappingURL=index.js.map
