@@ -1,32 +1,65 @@
-let a: string = "Hello, TypeScript!";
-let b: number = 42;
-let c: boolean = true;
-let d: symbol = Symbol("unique");
-let e: null = null;
-let f: undefined = undefined;
-let g: any = "This can be any type";
-let h: unknown = "This is an unknown type";
-let i: 5 | 10 | 15 = 10; // Union type with specific values
+type Role = "Developer" | "Designer" | "Manager" | "Tester" | "Support" | "Intern" | "Client";
 
-// i = 25; => Error: Type '25' is not assignable to type '5 | 10 | 15'
+const obj: {
+    name: string;
+    surname: string;
+    age: number;
+    email: string;
+    role: Role;
+    hobbies?: string[];
+} = {
+    name: 'John',
+    surname: 'Doe',
+    age: 18,
+    email: 'john.doe@example.com',
+    role: 'Intern'
+}
 
-const person: { id: number; name: string; age: number; membership: "basic" | "premium" | "vip" } = {
-    id: 1,
-    name: "Alice",
-    age: 30,
-    membership: "basic",
+
+/////
+
+
+type Colors = "Red" | "Green" | "Blue" | "Yellow" | "Purple" | "Orange";
+type CustomColors= "Cyan" | "Magenta" | "Lime" | "Pink" | "Teal" | "Brown";
+const myColor: Colors = "Red";
+const myColors: Colors[] = ["Red", "Green", "Blue"];
+const allColors: (Colors | CustomColors)[] = [ "Red", "Green", "Blue", "Cyan", "Magenta", "Lime", "Pink", "Teal", "Brown"];
+
+
+//////
+
+
+type Person = {
+    name: string;
+    surname: string;
+    age: number;
+}
+
+type Dog = {
+    dogName: string;
+    breed: string;
+    age: number;
+}
+
+type DogPerson = Person & Dog;
+
+const dogPerson: DogPerson = {
+    name: "Will",
+    surname: "Smith",
+    age: 5,
+    dogName: "Buddy",
+    breed: "Golden Retriever"
 };
 
-// person.membership = "free"; =>  Error: Type '"free"' is not assignable to type '"basic" | "premium" | "vip"'
 
-const dizi = []; // any
-const dizi2: string[] = []; // string[]
-const dizi3 = [] as string[]; // string[]
-const dizi4: Array<string | number> = []; // string[] veya number[] olabilir
-dizi4.push("Hello");
-dizi4.push(42);
-// dizi4.push(true); => Error: Argument of type 'true' is not assignable to parameter of type 'string | number'
+////
 
-const myInfo: [string, string, number] = ["Ozan", "Cuyar", 29];
-const [firstName, lastName, age] = myInfo; // Destructuring assignment
-console.log(`Name: ${firstName} ${lastName}, Age: ${age}`);
+const myMap: Map<string, number> = new Map();
+myMap.set("one", 1);
+myMap.set("two", 2);
+myMap.set("three", 3);
+// myMap.set(4, "four"); => // Error: Argument of type 'number' is not assignable to parameter of type 'string'.
+// myMap.set("five", "five"); => // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+
+console.log(myMap);
