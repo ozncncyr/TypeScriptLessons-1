@@ -1,13 +1,32 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const all_1 = require("./all");
-all_1.Person.firstName = "Ozan Can";
-const student1 = {
-    name: "John",
-    surname: "Doe",
-    grade: 5
+// type myObject = {
+//     name: string;
+//     age: number;
+// };
+const myObj = {
+    name: "Ozan",
+    age: 29,
+    job: "Software Engineer"
 };
-console.log(all_1.Person.firstName);
-console.log(student1);
-console.log(all_1.Job);
+// myObj. => name, age, job gibi özelliklere erişebiliriz,
+// ancak TypeScript, job özelliğini tanımadığı için hata verecektir.
+// Bu durumda, index signature sayesinde job özelliği de kabul edilir ve hata olmaz.
+// Record, belirli bir anahtar türü ve değer türü tanımlamak için kullanılır
+const myObj2 = {
+    name: "Ozan",
+    age: 29,
+    job: "Software Engineer"
+};
+const personalInfo = {
+    name: { firstName: "Ozan", lastName: "Yılmaz" },
+    age: { value: 29, unit: "years" },
+    job: { title: "Software Engineer", company: "Tech Company" },
+    skills: { programmingLanguages: ["TypeScript", "JavaScript", "Python"] }
+};
+const personalList = [
+    { name: "Ozan Yılmaz", role: "Software Engineer" },
+    { name: "Ayşe Kaya", role: "Designer" },
+    { name: "Mehmet Demir", role: "Manager" }
+];
+console.log(personalList);
 //# sourceMappingURL=index.js.map
