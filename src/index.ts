@@ -31,14 +31,26 @@
 
 ////////////////////////////////////////
 
-interface myArray {
-    [index: number]: string | number;
+// interface myArray {
+//     [index: number]: string | number;
+// }
+
+// type c = (id: string, myName: string) => void;
+
+// const myFunction: c = (id, myName) => {
+//     console.log(`ID: ${id}, Name: ${myName}`);
+// }
+
+// const array: myArray = ["Hello", 42, "World", 3.14];
+
+//////////////////
+
+interface IFunction {
+    (name: string, repeat: number): void;
 }
 
-type c = (id: string, myName: string) => void;
-
-const myFunction: c = (id, myName) => {
-    console.log(`ID: ${id}, Name: ${myName}`);
+const myFunction: IFunction = (name, repeat) => {
+    console.log("\n" + name.repeat(repeat));
 }
 
-const array: myArray = ["Hello", 42, "World", 3.14];
+myFunction("Hello", 3); // Output: HelloHelloHello
