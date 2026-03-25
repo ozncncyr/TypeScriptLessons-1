@@ -66,26 +66,51 @@
 
 ///////////////////
 
-interface MongoResponse {
-    _id: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
+// interface MongoResponse {
+//     _id: string;
+//     createdAt: Date;
+//     updatedAt: Date;
+// }
  
-interface BooksResponse extends MongoResponse {
-    title: string;
-    author: string;
-    publishedYear: number;
+// interface BooksResponse extends MongoResponse {
+//     title: string;
+//     author: string;
+//     publishedYear: number;
+// }
+
+// function getBookResponse(): BooksResponse {
+//     return {
+//         _id: "1234567890",
+//         createdAt: new Date(),
+//         updatedAt: new Date(),
+//         title: "The Great Gatsby",
+//         author: "F. Scott Fitzgerald",
+//         publishedYear: 1925
+//     };
+// }
+
+//////////////////
+
+interface IStudent{
+    name: string;
+    surname: string;
+    level: number;
+    getStudentInfo: () => {
+        name: IStudent['name'];
+        surname: IStudent['surname'];
+        level: IStudent['level'];
+    }
 }
 
-function getBookResponse(): BooksResponse {
-    return {
-        _id: "1234567890",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        title: "The Great Gatsby",
-        author: "F. Scott Fitzgerald",
-        publishedYear: 1925
-    };
+const obj: IStudent = {
+    name: "Ozan",
+    surname: "Cuyar",
+    level: 3,
+    getStudentInfo() {
+        return {
+            name: this.name,
+            surname: this.surname,
+            level: this.level
+        }
+    }
 }
-
