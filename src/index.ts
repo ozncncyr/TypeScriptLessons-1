@@ -1,49 +1,116 @@
-// type myObject = {
-//     name: string;
+// interface Person {
+//   name: string;
 //     age: number;
+//     [key: string]: any; // Allow additional properties
+// }
+
+// const person: Person = {
+//   name: 'John Doe',
+//   age: 30
 // };
 
-// type myObject = Partial<{  // Partial, tüm özellikleri isteğe bağlı yapar
-//     name: string;
-//     age: number;
-// }>;
+// const name: Person['name'] = person.name; // Type is string
+// const age: Person['age'] = person.age; // Type is number
 
-type myObject = {
+// console.log(name, age);
+
+////////////////////////////////////////
+
+// import { Handler, Request, Response } from "express";
+
+// type FunctionThatReturnsBoolean = (id: string, password: string) => boolean;
+
+// const myFunction: FunctionThatReturnsBoolean = (id, password) => {
+//   // Implement your logic here
+//   return id === "admin" && password === "password123";
+// }
+
+// const handler: Handler = (req: Request, res: Response) => {
+//   res.send("Hello, World!");
+// }
+
+////////////////////////////////////////
+
+// interface myArray {
+//     [index: number]: string | number;
+// }
+
+// type c = (id: string, myName: string) => void;
+
+// const myFunction: c = (id, myName) => {
+//     console.log(`ID: ${id}, Name: ${myName}`);
+// }
+
+// const array: myArray = ["Hello", 42, "World", 3.14];
+
+//////////////////
+
+// interface IFunction1 {
+//     (name: string, repeat: number): void;
+// }
+
+// const myFunction: IFunction1 = (name, repeat) => {
+//     console.log("\n" + name.repeat(repeat));
+// }
+
+// interface IFunction2 extends IFunction1 {
+//     (age: number, repeat: number): void;
+// }
+
+// const myFunction2: IFunction2 = (age, repeat) => {
+//     console.log("\n" + age.toString().repeat(repeat));
+// }
+
+// myFunction("Hello", 3); // Output: HelloHelloHello
+// myFunction2(5, 3); // Output: 555
+
+///////////////////
+
+// interface MongoResponse {
+//     _id: string;
+//     createdAt: Date;
+//     updatedAt: Date;
+// }
+ 
+// interface BooksResponse extends MongoResponse {
+//     title: string;
+//     author: string;
+//     publishedYear: number;
+// }
+
+// function getBookResponse(): BooksResponse {
+//     return {
+//         _id: "1234567890",
+//         createdAt: new Date(),
+//         updatedAt: new Date(),
+//         title: "The Great Gatsby",
+//         author: "F. Scott Fitzgerald",
+//         publishedYear: 1925
+//     };
+// }
+
+//////////////////
+
+interface IStudent{
     name: string;
-    age: number;
-    [key: string]: any;  // Index signature, herhangi bir ek özellik eklenebilir
-};
+    surname: string;
+    level: number;
+    getStudentInfo: () => {
+        name: IStudent['name'];
+        surname: IStudent['surname'];
+        level: IStudent['level'];
+    }
+}
 
-
-const myObj: myObject = {
+const obj: IStudent = {
     name: "Ozan",
-    age: 29,
-    job: "Software Engineer"
-};
-
-// myObj. => name, age, job gibi özelliklere erişebiliriz,
-// ancak TypeScript, job özelliğini tanımadığı için hata verecektir.
-// Bu durumda, index signature sayesinde job özelliği de kabul edilir ve hata olmaz.
-
-
-// Record, belirli bir anahtar türü ve değer türü tanımlamak için kullanılır
-const myObj2: Record<string, any> = { 
-    name: "Ozan",
-    age: 29,
-    job: "Software Engineer"
-};
-
-const personalInfo: Record<string, object> = {
-    name: { firstName: "Ozan", lastName: "Yılmaz" },
-    age: { value: 29, unit: "years" },
-    job: { title: "Software Engineer", company: "Tech Company" },
-    skills: { programmingLanguages: ["TypeScript", "JavaScript", "Python"] }
-};
-
-const personalList: Array<Record<"name" | "role", string>> = [
-    { name: "Ozan Yılmaz", role: "Software Engineer" },
-    { name: "Ayşe Kaya", role: "Designer" },
-    { name: "Mehmet Demir", role: "Manager" }
-];
-
-console.log(personalList)
+    surname: "Cuyar",
+    level: 3,
+    getStudentInfo() {
+        return {
+            name: this.name,
+            surname: this.surname,
+            level: this.level
+        }
+    }
+}
