@@ -16,15 +16,29 @@
 
 ////////////////////////////////////////
 
-import { Handler, Request, Response } from "express";
+// import { Handler, Request, Response } from "express";
 
-type FunctionThatReturnsBoolean = (id: string, password: string) => boolean;
+// type FunctionThatReturnsBoolean = (id: string, password: string) => boolean;
 
-const myFunction: FunctionThatReturnsBoolean = (id, password) => {
-  // Implement your logic here
-  return id === "admin" && password === "password123";
+// const myFunction: FunctionThatReturnsBoolean = (id, password) => {
+//   // Implement your logic here
+//   return id === "admin" && password === "password123";
+// }
+
+// const handler: Handler = (req: Request, res: Response) => {
+//   res.send("Hello, World!");
+// }
+
+////////////////////////////////////////
+
+interface myArray {
+    [index: number]: string | number;
 }
 
-const handler: Handler = (req: Request, res: Response) => {
-  res.send("Hello, World!");
+type c = (id: string, myName: string) => void;
+
+const myFunction: c = (id, myName) => {
+    console.log(`ID: ${id}, Name: ${myName}`);
 }
+
+const array: myArray = ["Hello", 42, "World", 3.14];
