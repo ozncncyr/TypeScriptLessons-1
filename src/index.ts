@@ -9,6 +9,11 @@
 //   age: 30
 // };
 
+// const name: Person['name'] = person.name; // Type is string
+// const age: Person['age'] = person.age; // Type is number
+
+// console.log(name, age);
+
 ////////////////////////////////////////
 
 import { Handler, Request, Response } from "express";
