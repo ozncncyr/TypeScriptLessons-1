@@ -1,11 +1,11 @@
 export interface IStudent{
     name: string;
     surname: string;
-    level: number;
+    age: number;
     getStudentInfo: () => {
         name: IStudent['name'];
         surname: IStudent['surname'];
-        level: IStudent['level'];
+        age: IStudent['age'];
     }
 }
 
@@ -13,14 +13,14 @@ export class Student implements IStudent {
     constructor(
         public name: string,
         public surname: string,
-        public level: number
+        public age: number
     ) {}
 
     getStudentInfo() {
         return {
             name: this.name,
             surname: this.surname,
-            level: this.level
+            age: this.age
         };
     }
 }
