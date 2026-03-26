@@ -1,15 +1,4 @@
-export interface IStudent{
-    name: string;
-    surname: string;
-    age: number;
-    getStudentInfo: () => {
-        name: IStudent['name'];
-        surname: IStudent['surname'];
-        age: IStudent['age'];
-    }
-}
-
-export class Student implements IStudent { 
+export class Student { 
     constructor(
         public name: string,
         public surname: string,
