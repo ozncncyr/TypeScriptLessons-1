@@ -8,3 +8,19 @@ export interface IStudent{
         level: IStudent['level'];
     }
 }
+
+export class Student implements IStudent { 
+    constructor(
+        public name: string,
+        public surname: string,
+        public level: number
+    ) {}
+
+    getStudentInfo() {
+        return {
+            name: this.name,
+            surname: this.surname,
+            level: this.level
+        };
+    }
+}
